@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Default">
+      <UniqueIdentifier>{3da8236b-9a2d-40e0-9374-691cbeddf564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{9cd04dee-d2c9-47de-9198-c878daa0df07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\01.Engine">
+      <UniqueIdentifier>{0d7fd61b-060d-4666-af80-f7de4ef23f82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.Manger">
+      <UniqueIdentifier>{0770e486-623a-4836-96c5-fd21e673864c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03.Object">
+      <UniqueIdentifier>{9fba6ebc-5b27-4c0d-9699-5ccc049c9a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entity">
+      <UniqueIdentifier>{671a8494-704b-4d3b-be35-43a819017b63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="APIClass.h" />
+    <ClInclude Include="pch.h">
+      <Filter>Default</Filter>
+    </ClInclude>
+    <ClInclude Include="CEngine.h">
+      <Filter>Game\01.Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>Game\02.Manger</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntity.h">
+      <Filter>Game\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="CObj.h">
+      <Filter>Game\03.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="APIClass.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="APIClass.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="APIClass.cpp" />
+    <ClCompile Include="pch.cpp">
+      <Filter>Default</Filter>
+    </ClCompile>
+    <ClCompile Include="CEngine.cpp">
+      <Filter>Game\01.Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeMgr.cpp">
+      <Filter>Game\02.Manger</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntity.cpp">
+      <Filter>Game\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="CObj.cpp">
+      <Filter>Game\03.Object</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
