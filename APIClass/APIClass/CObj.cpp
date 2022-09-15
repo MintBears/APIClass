@@ -1,10 +1,12 @@
 #include "pch.h"
+#include "CTimeMgr.h"
 #include "CObj.h"
 
 
 CObj::CObj():
 	m_vPos{},
-	m_vScale{}
+	m_vScale{},
+	m_fSpeed(200.f)
 {
 }
 
@@ -18,22 +20,22 @@ void CObj::tick()
 
 	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 	{
-		vPos.x -= 1;
+		vPos.x -= m_fSpeed * DT;
 	}
 
 	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 	{
-		vPos.x += 1;
+		vPos.x += m_fSpeed * DT;
 	}
 
 	if (GetAsyncKeyState(VK_UP) & 0x8000)
 	{
-		vPos.y -= 1;
+		vPos.y -= m_fSpeed * DT;
 	}
 
 	if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 	{
-		vPos.y += 1;
+		vPos.y += m_fSpeed * DT;
 	}
 
 	SetPos(vPos);

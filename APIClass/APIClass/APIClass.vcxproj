@@ -140,6 +140,7 @@
     <ClInclude Include="CEntity.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CTimeMgr.h" />
+    <ClInclude Include="def.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />

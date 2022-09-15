@@ -10,5 +10,6 @@
 #include <memory.h>
 #include <tchar.h>
 #include "struct.h"
+#include "def.h"
 
 

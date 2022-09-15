@@ -50,7 +50,12 @@
     <ClInclude Include="CObj.h">
       <Filter>Game\03.Object</Filter>
     </ClInclude>
-    <ClInclude Include="struct.h" />
+    <ClInclude Include="struct.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="def.h">
+      <Filter>Game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="APIClass.rc">

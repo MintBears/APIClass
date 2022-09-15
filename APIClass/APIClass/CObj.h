@@ -10,6 +10,7 @@ public:
 public : 
     Vec2   m_vPos;
     Vec2   m_vScale;
+    FLOAT   m_fSpeed;
 
 public : 
     void SetPos(Vec2 _v) { m_vPos = _v; }
