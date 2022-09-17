@@ -2,6 +2,7 @@
 #include "CEngine.h"
 
 #include "CTimeMgr.h"
+#include "CKeyMgr.h"
 
 #include "CObj.h"
 
@@ -36,6 +37,7 @@ void CEngine::Inst(HWND _hwnd, UINT _iWidth, UINT _iHeight)
 
 	//timeMgr 초기화
 	CTimeMgr::GetInst()->init();
+	CKeyMgr::GetInst()->init();
 
 	//obj초기화
 	obj.SetPos(Vec2(_iWidth / 2, _iHeight / 2));
@@ -54,6 +56,7 @@ void CEngine::progress()
 void CEngine::tick()
 {
 	CTimeMgr::GetInst()->tick();
+	CKeyMgr::GetInst()->tick();
 
 	obj.tick();
 }

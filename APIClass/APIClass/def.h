@@ -4,6 +4,10 @@
 					 private : type(); ~type();
 
 #define DT CTimeMgr::GetInst()->GetDeltaTime()
+
+#define IsTap(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::TAP
+#define IsPressed(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::PRESSED
+#define IsRelease(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::RELEASED
 /*
 public:
 	//Á¤Àû½Ì±ÛÅæ
@@ -23,7 +27,7 @@ public:
 private:
 	static CEngine* m_pInst;
 public:
-	static CEngine* GetInst()
+	static CEngine* GetInit()
 	{
 		if (nullptr == m_pInst)
 		{

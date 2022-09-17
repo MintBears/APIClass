@@ -138,6 +138,7 @@
     <ClInclude Include="APIClass.h" />
     <ClInclude Include="CEngine.h" />
     <ClInclude Include="CEntity.h" />
+    <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CTimeMgr.h" />
     <ClInclude Include="def.h" />
@@ -151,6 +152,7 @@
     <ClCompile Include="APIClass.cpp" />
     <ClCompile Include="CEngine.cpp" />
     <ClCompile Include="CEntity.cpp" />
+    <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CObj.cpp" />
     <ClCompile Include="CTimeMgr.cpp" />
     <ClCompile Include="pch.cpp">

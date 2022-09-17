@@ -23,6 +23,12 @@
     <Filter Include="Game\Entity">
       <UniqueIdentifier>{671a8494-704b-4d3b-be35-43a819017b63}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\02.Manger\KerMgr">
+      <UniqueIdentifier>{893b0936-2db8-4b3e-9e3e-57a989058b05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.Manger\TimeMgr">
+      <UniqueIdentifier>{d70ad5ab-6870-42b5-9f2d-b2c253d469a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -41,9 +47,6 @@
     <ClInclude Include="CEngine.h">
       <Filter>Game\01.Engine</Filter>
     </ClInclude>
-    <ClInclude Include="CTimeMgr.h">
-      <Filter>Game\02.Manger</Filter>
-    </ClInclude>
     <ClInclude Include="CEntity.h">
       <Filter>Game\Entity</Filter>
     </ClInclude>
@@ -55,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="def.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Game\02.Manger\KerMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>Game\02.Manger\TimeMgr</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -78,14 +87,17 @@
     <ClCompile Include="CEngine.cpp">
       <Filter>Game\01.Engine</Filter>
     </ClCompile>
-    <ClCompile Include="CTimeMgr.cpp">
-      <Filter>Game\02.Manger</Filter>
-    </ClCompile>
     <ClCompile Include="CEntity.cpp">
       <Filter>Game\Entity</Filter>
     </ClCompile>
     <ClCompile Include="CObj.cpp">
       <Filter>Game\03.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Game\02.Manger\KerMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimeMgr.cpp">
+      <Filter>Game\02.Manger\TimeMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

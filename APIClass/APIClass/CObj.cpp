@@ -1,6 +1,8 @@
 #include "pch.h"
-#include "CTimeMgr.h"
 #include "CObj.h"
+
+#include "CTimeMgr.h"
+#include "CKeyMgr.h"
 
 
 CObj::CObj():
@@ -18,22 +20,24 @@ void CObj::tick()
 {
 	Vec2 vPos = GetPos();
 
-	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+	//문제점 : 현재 각각의 키상태를 매 tick 마다 확인을 해야되는 상황이다.
+	//해결 : 이걸 종합적으로 관리해줄 메니저를 따로 만들어야된다.
+	if (IsPressed(KEY::LEFT))
 	{
 		vPos.x -= m_fSpeed * DT;
 	}
-
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+	
+	if (IsPressed(KEY::RIGHR))
 	{
 		vPos.x += m_fSpeed * DT;
 	}
-
-	if (GetAsyncKeyState(VK_UP) & 0x8000)
+	
+	if (IsPressed(KEY::UP))
 	{
 		vPos.y -= m_fSpeed * DT;
 	}
-
-	if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+	
+	if (IsPressed(KEY::DOWN))
 	{
 		vPos.y += m_fSpeed * DT;
 	}
