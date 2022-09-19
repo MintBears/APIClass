@@ -12,6 +12,9 @@ private:
 	CLevel* m_arrLevel[(UINT)LEVEL_TYPE::END];
 	CLevel* m_CurLevel;
 
+public: 
+	CLevel* GetCurLevel() { return m_CurLevel; }
+
 public:
 
 	void init();

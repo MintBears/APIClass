@@ -9,6 +9,18 @@ int g_arrVK[(UINT)KEY::END]
 	VK_LEFT,
 	VK_RIGHT,
 
+	VK_SPACE,
+
+	VK_RETURN,
+	VK_ESCAPE,
+	VK_LMENU,
+	VK_LCONTROL,
+	VK_LSHIFT,
+	VK_TAB,
+
+	VK_LBUTTON,
+	VK_RBUTTON,
+
 	'Q',
 	'W',
 	'E',

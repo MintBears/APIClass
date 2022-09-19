@@ -3,9 +3,14 @@
 
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
+#include "CLevelMgr.h"
+
+#include "CLevel.h"
+#include "CMissile.h"
 
 CPlayer::CPlayer():
 	m_fSpeed(200.f)
+
 {
 }
 
@@ -37,6 +42,21 @@ void CPlayer::tick()
 	if (IsPressed(KEY::DOWN))
 	{
 		vPos.y += m_fSpeed * DT;
+	}
+
+	if (IsTap(KEY::SPACE))
+	{
+		CLevel* CurLevel = CLevelMgr::GetInst()->GetCurLevel();
+
+		for (int i = 0; i < 3; i++)
+		{
+			CMissile* Missile = new CMissile;
+			Missile->SetPos(GetPos());
+			Missile->SetScale(Vec2(20.F, 20.f));
+			Missile->SetSpeed(400.f);
+			Missile->SetDir(45.f + 45.f * (float)i);
+			CurLevel->AddObject(Missile);
+		}
 	}
 
 	SetPos(vPos);

@@ -9,6 +9,17 @@ enum class KEY
 	LEFT,
 	RIGHR,
 
+	SPACE,
+	ENTER,
+	ESC,
+	LALT,
+	LCTRL,
+	LSHIFT,
+	TAB,
+
+	LBTN,
+	RBTN,
+
 	Q,
 	W,
 	E,

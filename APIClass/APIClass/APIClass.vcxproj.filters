@@ -44,8 +44,11 @@
     <Filter Include="Game\03.Level\03.Stage_02">
       <UniqueIdentifier>{d84a53c4-dcc6-4d00-8c90-8fd982a0df34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\04.Object\01.Player">
+    <Filter Include="Game\04.Object\Player">
       <UniqueIdentifier>{f8db52ca-0609-4c6c-b586-9fbf0b098933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04.Object\Missile">
+      <UniqueIdentifier>{a742be29-78b8-45cd-b0fe-aa0f1842e2ec}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -96,7 +99,10 @@
       <Filter>Game\03.Level\02.Stage_01</Filter>
     </ClInclude>
     <ClInclude Include="CPlayer.h">
-      <Filter>Game\04.Object\01.Player</Filter>
+      <Filter>Game\04.Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CMissile.h">
+      <Filter>Game\04.Object\Missile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -145,7 +151,10 @@
       <Filter>Game\03.Level\02.Stage_01</Filter>
     </ClCompile>
     <ClCompile Include="CPlayer.cpp">
-      <Filter>Game\04.Object\01.Player</Filter>
+      <Filter>Game\04.Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CMissile.cpp">
+      <Filter>Game\04.Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

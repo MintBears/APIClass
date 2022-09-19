@@ -141,6 +141,7 @@
     <ClInclude Include="CKeyMgr.h" />
     <ClInclude Include="CLevel.h" />
     <ClInclude Include="CLevelMgr.h" />
+    <ClInclude Include="CMissile.h" />
     <ClInclude Include="CObj.h" />
     <ClInclude Include="CPlayer.h" />
     <ClInclude Include="CStage01Level.h" />
@@ -160,6 +161,7 @@
     <ClCompile Include="CKeyMgr.cpp" />
     <ClCompile Include="CLevel.cpp" />
     <ClCompile Include="CLevelMgr.cpp" />
+    <ClCompile Include="CMissile.cpp" />
     <ClCompile Include="CObj.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CStage01Level.cpp" />

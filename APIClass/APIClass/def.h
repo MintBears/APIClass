@@ -10,6 +10,7 @@
 #define IsRelease(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::RELEASED
 
 #define DEL(p) if (nullptr != p) delete p;
+#define PI	3.1215926535f
 
 enum class LEVEL_TYPE
 {
