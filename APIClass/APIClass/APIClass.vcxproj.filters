@@ -17,9 +17,6 @@
     <Filter Include="Game\02.Manger">
       <UniqueIdentifier>{0770e486-623a-4836-96c5-fd21e673864c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\03.Object">
-      <UniqueIdentifier>{9fba6ebc-5b27-4c0d-9699-5ccc049c9a58}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Game\Entity">
       <UniqueIdentifier>{671a8494-704b-4d3b-be35-43a819017b63}</UniqueIdentifier>
     </Filter>
@@ -28,6 +25,27 @@
     </Filter>
     <Filter Include="Game\02.Manger\TimeMgr">
       <UniqueIdentifier>{d70ad5ab-6870-42b5-9f2d-b2c253d469a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03.Level">
+      <UniqueIdentifier>{99953df1-81af-47da-8227-fce0ff0bf15c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04.Object">
+      <UniqueIdentifier>{9fba6ebc-5b27-4c0d-9699-5ccc049c9a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.Manger\LevelMgr">
+      <UniqueIdentifier>{99e67396-f0aa-4d4a-abe8-d019d0ee987e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03.Level\01.Start">
+      <UniqueIdentifier>{9ad255af-e712-4e2f-bc92-61cde578f9cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03.Level\02.Stage_01">
+      <UniqueIdentifier>{b5e888a5-26f4-4bb7-9f7a-83b289c6864b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\03.Level\03.Stage_02">
+      <UniqueIdentifier>{d84a53c4-dcc6-4d00-8c90-8fd982a0df34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04.Object\01.Player">
+      <UniqueIdentifier>{f8db52ca-0609-4c6c-b586-9fbf0b098933}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,7 +69,7 @@
       <Filter>Game\Entity</Filter>
     </ClInclude>
     <ClInclude Include="CObj.h">
-      <Filter>Game\03.Object</Filter>
+      <Filter>Game\04.Object</Filter>
     </ClInclude>
     <ClInclude Include="struct.h">
       <Filter>Game</Filter>
@@ -64,6 +82,21 @@
     </ClInclude>
     <ClInclude Include="CTimeMgr.h">
       <Filter>Game\02.Manger\TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevel.h">
+      <Filter>Game\03.Level</Filter>
+    </ClInclude>
+    <ClInclude Include="CLevelMgr.h">
+      <Filter>Game\02.Manger\LevelMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CStartLevel.h">
+      <Filter>Game\03.Level\01.Start</Filter>
+    </ClInclude>
+    <ClInclude Include="CStage01Level.h">
+      <Filter>Game\03.Level\02.Stage_01</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Game\04.Object\01.Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -91,13 +124,28 @@
       <Filter>Game\Entity</Filter>
     </ClCompile>
     <ClCompile Include="CObj.cpp">
-      <Filter>Game\03.Object</Filter>
+      <Filter>Game\04.Object</Filter>
     </ClCompile>
     <ClCompile Include="CKeyMgr.cpp">
       <Filter>Game\02.Manger\KerMgr</Filter>
     </ClCompile>
     <ClCompile Include="CTimeMgr.cpp">
       <Filter>Game\02.Manger\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevel.cpp">
+      <Filter>Game\03.Level</Filter>
+    </ClCompile>
+    <ClCompile Include="CLevelMgr.cpp">
+      <Filter>Game\02.Manger\LevelMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CStartLevel.cpp">
+      <Filter>Game\03.Level\01.Start</Filter>
+    </ClCompile>
+    <ClCompile Include="CStage01Level.cpp">
+      <Filter>Game\03.Level\02.Stage_01</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Game\04.Object\01.Player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

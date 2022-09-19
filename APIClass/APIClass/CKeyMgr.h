@@ -24,8 +24,6 @@ enum class KEY_STATE
 	PRESSED,	//누루고있는동안
 	RELEASED,	//해제순간
 	NONE,		//아무것도 아닌순간
-
-	END,
 };
 
 struct tKeyInfo

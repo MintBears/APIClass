@@ -3,10 +3,7 @@
 
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
-
-#include "CObj.h"
-
-CObj obj;
+#include "CLevelMgr.h"
 
 //싱글톤 초기화
 //CEngine* CEngine::m_pInst = nullptr;
@@ -35,13 +32,21 @@ void CEngine::Inst(HWND _hwnd, UINT _iWidth, UINT _iHeight)
 	//HDC 초기화
 	m_hDC = GetDC(m_hMainWnd);
 
+	//dc 펜 설정
+	HPEN hGreenPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+	//HPEN hBlackPen = (HPEN)SelectObject(m_hDC, hGreenPen);
+	//DeleteObject(hBlackPen);
+
+	//dc 브러쉬 설정
+	HBRUSH hBlueBrush = CreateSolidBrush(RGB(0, 0, 255));
+	//HBRUSH hWhiteBrush = (HBRUSH)SelectObject(m_hDC, hBlueBrush);
+	//DeleteObject(hWhiteBrush);
+
 	//timeMgr 초기화
 	CTimeMgr::GetInst()->init();
 	CKeyMgr::GetInst()->init();
+	CLevelMgr::GetInst()->init();
 
-	//obj초기화
-	obj.SetPos(Vec2(_iWidth / 2, _iHeight / 2));
-	obj.SetScale(Vec2(100.f, 100.f));
 }
 
 void CEngine::progress()
@@ -57,12 +62,15 @@ void CEngine::tick()
 {
 	CTimeMgr::GetInst()->tick();
 	CKeyMgr::GetInst()->tick();
+	CLevelMgr::GetInst()->tick();
 
-	obj.tick();
 }
 
 void CEngine::render()
 {
-	obj.render(m_hDC);
-	//Rectangle(m_hDC, 100, 100, 200, 200);
+	//화면 클리어
+
+
+	//레벨 렌더
+	CLevelMgr::GetInst()->render(m_hDC);
 }

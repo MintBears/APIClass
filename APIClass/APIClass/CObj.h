@@ -5,12 +5,11 @@ class CObj :
 {
 public:
     CObj();
-    ~CObj();
+    virtual ~CObj();
 
 public : 
     Vec2   m_vPos;
     Vec2   m_vScale;
-    FLOAT   m_fSpeed;
 
 public : 
     void SetPos(Vec2 _v) { m_vPos = _v; }
@@ -20,8 +19,8 @@ public :
     Vec2 GetScale() { return m_vScale; }
 
 public : 
-    void tick();
-    void render(HDC _dc);
+    virtual void tick();
+    virtual void render(HDC _dc);
 
 
 };

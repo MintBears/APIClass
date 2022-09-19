@@ -8,6 +8,39 @@
 #define IsTap(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::TAP
 #define IsPressed(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::PRESSED
 #define IsRelease(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::RELEASED
+
+#define DEL(p) if (nullptr != p) delete p;
+
+enum class LEVEL_TYPE
+{
+	START,
+	STAGE_01,
+	STAGE_02,
+	STAGE_03,
+	STAGE_04,
+
+	END,
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 public:
 	//Á¤Àû½Ì±ÛÅæ
