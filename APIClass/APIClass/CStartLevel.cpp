@@ -1,8 +1,9 @@
 #include "pch.h"
-#include "CEngine.h"
-
 #include "CStartLevel.h"
 
+#include "CCollisionMgr.h"
+
+#include "CEngine.h"
 #include "CObj.h"
 #include "CPlayer.h"
 #include "CMonster.h"
@@ -27,4 +28,10 @@ void CStartLevel::init()
 	Monster->SetScale(Vec2(100.f, 100.f));
 	AddObject(Monster, LAYER::MONSTER);
 
+
+	//level의 충돌 체크
+	CCollisionMgr::GetInst()->LayerCheck(LAYER::PLAYER, LAYER::MONSTER);
+	CCollisionMgr::GetInst()->LayerCheck(LAYER::PLAYER, LAYER::MONSTER_PROJECTILE);
+	CCollisionMgr::GetInst()->LayerCheck(LAYER::PLAYER_PROJECTILE, LAYER::MONSTER);
+	CCollisionMgr::GetInst()->LayerCheck(LAYER::MONSTER, LAYER::MONSTER);
 }

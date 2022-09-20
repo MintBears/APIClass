@@ -17,6 +17,8 @@ private:
     //충돌체 고유의 크기
     Vec2        m_Scale;
 
+    bool        m_bOverlap;
+
 public:
     void SetOffsetPos(Vec2 _OffsetPos) { m_OffsetPos = _OffsetPos; }
     Vec2 GetOffsetPos() { return m_OffsetPos; }
@@ -24,8 +26,13 @@ public:
     void SetScale(Vec2 _Scale) { m_Scale = _Scale; }
     Vec2 GetScale() { return m_Scale; }
 
+    Vec2 GetFinalPos() { return m_FinalPos; }
+
 public:
     virtual void tick() override;
     virtual void render(HDC _dc) override;
+
+    void BeginOverlap(CCollider* _Other);
+    void EndOverlap(CCollider* _Other);
 };
 

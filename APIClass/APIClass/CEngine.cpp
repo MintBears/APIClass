@@ -4,6 +4,7 @@
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
+#include "CCollisionMgr.h"
 
 //½Ì±ÛÅæ ÃÊ±âÈ­
 //CEngine* CEngine::m_pInst = nullptr;
@@ -12,7 +13,8 @@ CEngine::CEngine() :
 	m_hDC(nullptr),
 	m_hMemDC(nullptr),
 	m_hMemBit(nullptr),
-	m_Resolution{}
+	m_Resolution{},
+	m_arrPen{}
 {
 }
 
@@ -81,6 +83,7 @@ void CEngine::tick()
 	CTimeMgr::GetInst()->tick();
 	CKeyMgr::GetInst()->tick();
 	CLevelMgr::GetInst()->tick();
+	CCollisionMgr::GetInst()->tick();
 
 }
 

@@ -26,9 +26,18 @@ void CMonster::render(HDC _dc)
 {
 	Vec2 vPos = GetPos();
 	Vec2 vSize = GetScale();
+
+	HBRUSH hOriginBrush = (HBRUSH)SelectObject(_dc, (HBRUSH)GetStockObject(NULL_BRUSH));
+
 	Rectangle(_dc, (int)(vPos.x - vSize.x / 2.f)
 					, (int)(vPos.y - vSize.y / 2.f)
 					, (int)(vPos.x + vSize.x / 2.f)
 					, (int)(vPos.y + vSize.y / 2.f));
+
+	SelectObject(_dc, hOriginBrush);
 	CObj::render(_dc);
+}
+
+void CMonster::BeginOverlap(CCollider* _Other)
+{
 }

@@ -36,6 +36,7 @@ public :
 
     void CreateCollider();
     void Createanimator();
+    virtual void BeginOverlap(CCollider* _Other) {};
 
 
 };
