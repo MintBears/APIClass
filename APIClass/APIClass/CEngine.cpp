@@ -24,6 +24,11 @@ CEngine::~CEngine()
 	//CreateCompatible로 만든 dc는 이걸로 지우라고 vs에서 그랬다.
 	DeleteDC(m_hMemDC);
 	DeleteObject(m_hMemBit);
+
+	for (UINT i = 0; i < (UINT)PEN_TYPE::END; i++)
+	{
+		DeleteObject(m_arrPen[i]);
+	}
 }
 
 
@@ -92,11 +97,10 @@ void CEngine::render()
 
 void CEngine::CreatPenBrush()
 {
-	////dc 펜 설정
-	//HPEN hGreenPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
-	//HPEN hBlackPen = (HPEN)SelectObject(m_hDC, hGreenPen);
-	//DeleteObject(hBlackPen);
-	//
+	m_arrPen[(UINT)PEN_TYPE::RED] = CreatePen(PS_SOLID, 1, RGB(255, 0, 0));
+	m_arrPen[(UINT)PEN_TYPE::BLUE] = CreatePen(PS_SOLID, 1, RGB(0, 0, 255));
+	m_arrPen[(UINT)PEN_TYPE::GREEN] = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
+
 	////dc 브러쉬 설정
 	//HBRUSH hBlueBrush = CreateSolidBrush(RGB(0, 0, 255));
 	//HBRUSH hWhiteBrush = (HBRUSH)SelectObject(m_hDC, hBlueBrush);

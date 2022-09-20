@@ -10,7 +10,7 @@ public:
     virtual ~CLevel();
 
 private:
-    vector<CObj*>   m_vecobj;
+    vector<CObj*>   m_arrLayer[(UINT)LAYER::END];
 
 public:
     virtual void init() = 0;
@@ -18,7 +18,7 @@ public:
     virtual void render(HDC _dc); 
 
 public:
-    void AddObject(CObj* _obj) { m_vecobj.push_back(_obj); }
+    void AddObject(CObj* _obj, LAYER _layer) { m_arrLayer[(UINT)_layer].push_back(_obj); }
 
 };
 

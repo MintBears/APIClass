@@ -6,12 +6,22 @@
 #include "CLevelMgr.h"
 
 #include "CLevel.h"
+
+#include "CCollider.h"
+#include "CAnimator.h"
+
 #include "CMissile.h"
+
+
 
 CPlayer::CPlayer():
 	m_fSpeed(200.f)
 
 {
+	CreateCollider();
+
+	GetCollider()->SetOffsetPos(Vec2(0.f, -50.f));
+	GetCollider()->SetScale(Vec2(150.f, 150.f));
 }
 
 CPlayer::~CPlayer()
@@ -55,14 +65,23 @@ void CPlayer::tick()
 			Missile->SetScale(Vec2(20.F, 20.f));
 			Missile->SetSpeed(400.f);
 			Missile->SetDir(45.f + 45.f * (float)i);
-			CurLevel->AddObject(Missile);
+			CurLevel->AddObject(Missile, LAYER::PLAYER_PROJECTILE);
 		}
 	}
 
 	SetPos(vPos);
+
+	CObj::tick();
 }
 
 void CPlayer::render(HDC _dc)
 {
+	Vec2 vPos = GetPos();
+	Vec2 vSize = GetScale();
+	Rectangle(_dc, (int)(vPos.x - vSize.x / 2.f)
+				 , (int)(vPos.y - vSize.y / 2.f)
+				 , (int)(vPos.x + vSize.x / 2.f)
+				 , (int)(vPos.y + vSize.y / 2.f));
+
 	CObj::render(_dc);
 }

@@ -8,25 +8,37 @@ CLevel::CLevel()
 
 CLevel::~CLevel()
 {
-	//오브젝트 삭제
-	for (size_t i = 0; i < m_vecobj.size(); i++)
+	for (UINT i = 0; i < (UINT)LAYER::END; i++)
 	{
-		DEL(m_vecobj[i]);
+		for (size_t j = 0; j < m_arrLayer[i].size(); j++)
+		{
+			DEL(m_arrLayer[i][j]);
+		}
 	}
+	//오브젝트 삭제 
+
 }
 
 void CLevel::tick()
 {
-	for (size_t i = 0; i < m_vecobj.size(); i++)
+
+	for (UINT i = 0; i < (UINT)LAYER::END; i++)
 	{
-		m_vecobj[i]->tick();
+		for (size_t j = 0; j < m_arrLayer[i].size(); j++)
+		{
+			m_arrLayer[i][j]->tick();
+		}
 	}
 }
 
 void CLevel::render(HDC _dc)
 {
-	for (size_t i = 0; i < m_vecobj.size(); i++)
+
+	for (UINT i = 0; i < (UINT)LAYER::END; i++)
 	{
-		m_vecobj[i]->render(_dc);
+		for (size_t j = 0; j < m_arrLayer[i].size(); j++)
+		{
+			m_arrLayer[i][j]->render(_dc);
+		}
 	}
 }

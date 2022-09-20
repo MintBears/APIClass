@@ -32,4 +32,17 @@ public :
 
 	}
 
+
+public:
+
+	Vec2 operator + (Vec2 _other)
+	{
+		return Vec2(x + _other.x, y + _other.y);
+	}
+
+	Vec2 operator += (Vec2 _other)
+	{
+		return Vec2(x += _other.x, y += _other.y);
+	}
+
 };

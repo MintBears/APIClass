@@ -24,6 +24,28 @@ enum class LEVEL_TYPE
 
 };
 
+enum class PEN_TYPE
+{
+	RED,
+	GREEN,
+	BLUE,
+
+	END,
+};
+
+enum class LAYER
+{
+	BACKGROUND,
+	TILE,
+	DEFAULT,
+	PLAYER,
+	MONSTER,
+	PLAYER_PROJECTILE,
+	MONSTER_PROJECTILE,
+
+	END = 16
+};
+
 
 
 

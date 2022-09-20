@@ -50,6 +50,18 @@
     <Filter Include="Game\04.Object\Missile">
       <UniqueIdentifier>{a742be29-78b8-45cd-b0fe-aa0f1842e2ec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\05.Component">
+      <UniqueIdentifier>{7f79929c-22fe-414f-9422-8b86cfd7823c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05.Component\Collider">
+      <UniqueIdentifier>{7a0066df-9de6-4790-9368-f49bed83e8ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05.Component\Animator">
+      <UniqueIdentifier>{3f0348e3-f979-4bbb-852c-2b78a88073da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\04.Object\Monster">
+      <UniqueIdentifier>{10eee28a-6e0e-4f1c-89b9-3249a6e63c12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -104,6 +116,18 @@
     <ClInclude Include="CMissile.h">
       <Filter>Game\04.Object\Missile</Filter>
     </ClInclude>
+    <ClInclude Include="CComponent.h">
+      <Filter>Game\05.Component</Filter>
+    </ClInclude>
+    <ClInclude Include="CCollider.h">
+      <Filter>Game\05.Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimator.h">
+      <Filter>Game\05.Component\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>Game\04.Object\Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="APIClass.rc">
@@ -155,6 +179,18 @@
     </ClCompile>
     <ClCompile Include="CMissile.cpp">
       <Filter>Game\04.Object\Missile</Filter>
+    </ClCompile>
+    <ClCompile Include="CComponent.cpp">
+      <Filter>Game\05.Component</Filter>
+    </ClCompile>
+    <ClCompile Include="CCollider.cpp">
+      <Filter>Game\05.Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimator.cpp">
+      <Filter>Game\05.Component\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>Game\04.Object\Monster</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

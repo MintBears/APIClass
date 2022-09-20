@@ -11,9 +11,12 @@ private:
 	HBITMAP m_hMemBit;
 
 	POINT	m_Resolution;
+	HPEN	m_arrPen[(UINT)PEN_TYPE::END];
 
 public : 
 	HWND GethMainWnd() { return m_hMainWnd; }
+	POINT GetResolution() { return m_Resolution; }
+	HPEN GetPen(PEN_TYPE _type) { return m_arrPen[(UINT)_type]; }
 
 public:
 	void Inst(HWND _hwnd, UINT _iWidth, UINT _iHeight);
