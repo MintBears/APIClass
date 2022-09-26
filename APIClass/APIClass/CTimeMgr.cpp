@@ -40,6 +40,14 @@ void CTimeMgr::tick()
 	//함수호출 횟수
 	++m_iCallCount;;
 
+
+
+	m_llPrevCount = m_llCurCount;
+
+}
+
+void CTimeMgr::render()
+{
 	if (m_fTime >= 1.f)
 	{
 		wchar_t szBuff[256] = {};
@@ -49,7 +57,4 @@ void CTimeMgr::tick()
 		m_fTime = 0.f;
 		m_iCallCount = 0;
 	}
-
-	m_llPrevCount = m_llCurCount;
-
 }

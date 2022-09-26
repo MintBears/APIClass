@@ -59,6 +59,17 @@ void CObj::SetDead()
 	CEventMge::GetInst()->AddEvent(_evn);
 }
 
+void CObj::Instantiate(CObj* _NewObj, Vec2 _Pos, LAYER _Layer)
+{
+	_NewObj->SetPos(_Pos);
+
+	tEvent _evn = {};
+	_evn.eType = EVENT_TYPE::CREATE_OBJECT;
+	_evn.wParam = (DWORD_PTR)_NewObj;
+	_evn.lParam = (DWORD_PTR)_Layer;
+	CEventMge::GetInst()->AddEvent(_evn);
+}
+
 void CObj::CreateCollider()
 {
 	m_Collider = new CCollider(this);

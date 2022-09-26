@@ -34,6 +34,7 @@ public :
 
     bool IsDead() { return m_Dead; }
     void SetDead();
+    void Instantiate(CObj* _NewObj, Vec2 _Pos, LAYER _Layer);
 
 public : 
     virtual void tick();

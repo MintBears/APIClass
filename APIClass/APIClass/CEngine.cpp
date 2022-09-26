@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "CEngine.h"
-
+#include "CPathMgr.h"
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
@@ -64,9 +64,14 @@ void CEngine::Inst(HWND _hwnd, UINT _iWidth, UINT _iHeight)
 	DeleteObject(hPrevBit);
 
 	//timeMgr 초기화
+	CPathMgr::GetInst()->init();
 	CTimeMgr::GetInst()->init();
 	CKeyMgr::GetInst()->init();
 	CLevelMgr::GetInst()->init();
+
+	//Img 로딩 경로
+	wstring strFilePath = CPathMgr::GetInst()->GetContentPath();
+	strFilePath += L"texture\\collectibles_001_thesadonion.png";
 
 }
 
@@ -99,6 +104,10 @@ void CEngine::render()
 	CLevelMgr::GetInst()->render(m_hMemDC);
 
 	BitBlt(m_hDC, 0, 0, m_Resolution.x, m_Resolution.y, m_hMemDC, 0, 0, SRCCOPY);
+
+	//프레임 확인용
+	CTimeMgr::GetInst()->render();
+
 }
 
 void CEngine::CreatPenBrush()

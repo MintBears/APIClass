@@ -62,7 +62,7 @@ void CPlayer::tick()
 		for (int i = 0; i < 3; i++)
 		{
 			CMissile* Missile = new CMissile;
-			Missile->SetPos(GetPos());
+			//Missile->SetPos(GetPos());
 			Missile->SetScale(Vec2(20.F, 20.f));
 			Missile->SetSpeed(400.f);
 			Missile->SetDir(45.f + (45.f * (float)i));
@@ -70,11 +70,13 @@ void CPlayer::tick()
 			//CurLevel->AddObject(Missile, LAYER::PLAYER_PROJECTILE);
 			//여기다가 보내면 tick에서 호출한 오브젝트는 바로 처리안하고 Event에 들어가서 처리한다.
 			//_evn.eType : 이벤트 타입 설정하고, _evn.wParam : 이벤트 정보 저장하고, AddEvent(_evn) : 이벤트메니저에 넣는다.
- 			tEvent _evn = {};
-			_evn.eType = EVENT_TYPE::CREATE_OBJECT;
-			_evn.wParam = (DWORD_PTR)Missile;
-			_evn.lParam = (DWORD_PTR)LAYER::PLAYER_PROJECTILE;
-			CEventMge::GetInst()->AddEvent(_evn);
+ 			//tEvent _evn = {};
+			//_evn.eType = EVENT_TYPE::CREATE_OBJECT;
+			//_evn.wParam = (DWORD_PTR)Missile;
+			//_evn.lParam = (DWORD_PTR)LAYER::PLAYER_PROJECTILE;
+			//CEventMge::GetInst()->AddEvent(_evn);
+			//이것들을 함수화
+			Instantiate(Missile, GetPos(), LAYER::PLAYER_PROJECTILE);
 		}
 	}
 

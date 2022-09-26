@@ -5,10 +5,14 @@
 
 bool IsValid(CObj*& _Target)
 {
-	if (_Target->IsDead() || nullptr == _Target)
+	if (nullptr == _Target)
+	{
+		return false;
+	}
+	else if (_Target->IsDead())
 	{
 		_Target = nullptr;
-		return false;
+		return false; 
 	}
 
     return true;

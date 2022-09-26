@@ -7,6 +7,7 @@ public:
     CMissile();
     virtual ~CMissile();
 
+private:
     FLOAT   m_fSpeed;
     FLOAT   m_fDegree;
     FLOAT   m_fTime;

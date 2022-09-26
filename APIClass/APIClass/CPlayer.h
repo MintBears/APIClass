@@ -7,7 +7,7 @@ public:
     CPlayer();
     virtual ~CPlayer();
 
-public:
+private:
     FLOAT   m_fSpeed;
 public:
 

@@ -16,6 +16,7 @@ private :
 public :
 	void init();
 	void tick();
+	void render();
 
 public : 
 	FLOAT GetDeltaTime() { return m_fDeltaTime; }

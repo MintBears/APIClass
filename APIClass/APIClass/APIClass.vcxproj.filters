@@ -68,6 +68,12 @@
     <Filter Include="Game\02.Manger\EventMge">
       <UniqueIdentifier>{2677a4a1-9c4d-4fa5-98db-6785ab52aaf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\02.Manger\ResMgr">
+      <UniqueIdentifier>{17ee9bfd-9a6d-453b-bf55-318ea700d3cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.Manger\PathMgr">
+      <UniqueIdentifier>{63899d86-1a39-4231-93e0-c31b75239e79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -145,6 +151,12 @@
     <ClInclude Include="Func.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="CResMgr.h">
+      <Filter>Game\02.Manger\ResMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CPathMgr.h">
+      <Filter>Game\02.Manger\PathMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="APIClass.rc">
@@ -217,6 +229,12 @@
     </ClCompile>
     <ClCompile Include="Func.cpp">
       <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="CResMgr.cpp">
+      <Filter>Game\02.Manger\ResMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CPathMgr.cpp">
+      <Filter>Game\02.Manger\PathMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
