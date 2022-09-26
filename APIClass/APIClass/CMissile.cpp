@@ -4,9 +4,11 @@
 #include "CTimeMgr.h"
 #include "CCollider.h"
 
-CMissile::CMissile():
-	m_fSpeed(400.f),
-	m_fDegree(80.f)
+CMissile::CMissile()
+	: m_fSpeed(400.f)
+	, m_fDegree(80.f)
+	, m_fTime(0.0f)
+
 {
 	CreateCollider();
 	GetCollider()->SetScale(Vec2(10.f, 10.f));
@@ -39,4 +41,9 @@ void CMissile::render(HDC _dc)
 				  , (int)(vPos.y + vSize.y / 2.f));
 
 	CObj::render(_dc);
+}
+
+void CMissile::BeginOverlap(CCollider* _Other)
+{
+	SetDead();
 }

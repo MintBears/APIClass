@@ -4,6 +4,7 @@
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
+#include "CEventMge.h"
 
 #include "CLevel.h"
 
@@ -56,7 +57,7 @@ void CPlayer::tick()
 
 	if (IsTap(KEY::SPACE))
 	{
-		CLevel* CurLevel = CLevelMgr::GetInst()->GetCurLevel();
+		//CLevel* CurLevel = CLevelMgr::GetInst()->GetCurLevel();
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -64,8 +65,16 @@ void CPlayer::tick()
 			Missile->SetPos(GetPos());
 			Missile->SetScale(Vec2(20.F, 20.f));
 			Missile->SetSpeed(400.f);
-			Missile->SetDir(45.f + 45.f * (float)i);
-			CurLevel->AddObject(Missile, LAYER::PLAYER_PROJECTILE);
+			Missile->SetDir(45.f + (45.f * (float)i));
+			//바로 레벨에 추가한다.
+			//CurLevel->AddObject(Missile, LAYER::PLAYER_PROJECTILE);
+			//여기다가 보내면 tick에서 호출한 오브젝트는 바로 처리안하고 Event에 들어가서 처리한다.
+			//_evn.eType : 이벤트 타입 설정하고, _evn.wParam : 이벤트 정보 저장하고, AddEvent(_evn) : 이벤트메니저에 넣는다.
+ 			tEvent _evn = {};
+			_evn.eType = EVENT_TYPE::CREATE_OBJECT;
+			_evn.wParam = (DWORD_PTR)Missile;
+			_evn.lParam = (DWORD_PTR)LAYER::PLAYER_PROJECTILE;
+			CEventMge::GetInst()->AddEvent(_evn);
 		}
 	}
 
@@ -94,4 +103,12 @@ void CPlayer::render(HDC _dc)
 void CPlayer::BeginOverlap(CCollider* _Other)
 {
 	
+}
+
+void CPlayer::OnOverlap(CCollider* _Other)
+{
+}
+
+void CPlayer::EndOverlap(CCollider* _Other)
+{
 }

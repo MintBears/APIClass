@@ -36,9 +36,19 @@ void CLevel::render(HDC _dc)
 
 	for (UINT i = 0; i < (UINT)LAYER::END; i++)
 	{
-		for (size_t j = 0; j < m_arrLayer[i].size(); j++)
+		vector<CObj*>::iterator iter = m_arrLayer[i].begin();
+
+		for (; iter != m_arrLayer[i].end();)
 		{
-			m_arrLayer[i][j]->render(_dc);
+			if ((*iter)->IsDead())
+			{
+				iter = m_arrLayer[i].erase(iter);
+			}
+			else
+			{
+				(*iter)->render(_dc);
+				++iter;
+			}
 		}
 	}
 }

@@ -46,6 +46,13 @@ enum class LAYER
 	END = 16
 };
 
+enum class EVENT_TYPE
+{
+	CREATE_OBJECT,			//오브젝트 생성 //wParam : Object Adress		//lParam : Layer type
+	DELETE_OBJECT,			//오즈벡트 제거 //wParam : Object Adress
+	LEVEL_CHANGE,			//레벨 교환	   //wParam : Level_type(Next Level Type)
+};
+
 
 
 

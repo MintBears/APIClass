@@ -5,6 +5,7 @@
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
 #include "CCollisionMgr.h"
+#include "CEventMge.h"
 
 //싱글톤 초기화
 //CEngine* CEngine::m_pInst = nullptr;
@@ -76,6 +77,8 @@ void CEngine::progress()
 
 	//화면 랜더링 갱신
 	render();
+
+	CEventMge::GetInst()->tick();
 }
 
 void CEngine::tick()

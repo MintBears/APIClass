@@ -7,7 +7,8 @@
 CCollider::CCollider(CObj* _Owner) :
 	CComponent(_Owner),
 	m_OffsetPos(),
-	m_FinalPos()
+	m_FinalPos(),
+	m_OverlapCount(0)
 {
 }
 
@@ -18,6 +19,8 @@ CCollider::~CCollider()
 void CCollider::tick()
 {
 	m_FinalPos = GetOwner()->GetPos() + m_OffsetPos;
+
+	assert(!(m_OverlapCount < 0));
 }
 
 void CCollider::render(HDC _dc)
@@ -31,7 +34,7 @@ void CCollider::render(HDC _dc)
 
 	HPEN hPen = nullptr;
 
-	if (m_bOverlap)
+	if (0 < m_OverlapCount)
 	{
 		hPen = CEngine::GetInst()->GetPen(PEN_TYPE::GREEN);
 	}
@@ -59,12 +62,18 @@ void CCollider::render(HDC _dc)
 
 void CCollider::BeginOverlap(CCollider* _Other)
 {
-	m_bOverlap = true;
+	m_OverlapCount++;
 
 	GetOwner()->BeginOverlap(_Other);
 }
 
+void CCollider::OnOverlap(CCollider* _Other)
+{
+	GetOwner()->OnOverlap(_Other);
+}
+
 void CCollider::EndOverlap(CCollider* _Other)
 {
-	m_bOverlap = false;
+	GetOwner()->EndOverlap(_Other);
+	m_OverlapCount--;
 }

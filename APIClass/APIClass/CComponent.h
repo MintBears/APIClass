@@ -1,7 +1,8 @@
 #pragma once
+#include "CEntity.h"
 
 class CObj;
-class CComponent
+class CComponent:public CEntity
 {
 public:
 	CComponent(CObj* _Owner);

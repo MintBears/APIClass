@@ -9,6 +9,7 @@ public:
 
     FLOAT   m_fSpeed;
     FLOAT   m_fDegree;
+    FLOAT   m_fTime;
 
 public:
     void SetSpeed(FLOAT _speed) { m_fSpeed = _speed; }
@@ -17,5 +18,7 @@ public:
 public:
     virtual void tick() override;
     virtual void render(HDC _dc)override;
+
+    virtual void BeginOverlap(CCollider* _Other) override;
 };
 

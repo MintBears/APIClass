@@ -3,16 +3,18 @@
 
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
+#include "CEventMge.h"
 
 #include "CComponent.h"
 #include "CCollider.h"
 #include "CAnimator.h"
 
-CObj::CObj():
-	m_vPos{},
-	m_vScale{},
-	m_Collider(nullptr),
-	m_Animator(nullptr)
+CObj::CObj()
+	: m_vPos{}
+	, m_vScale{}
+	, m_Collider(nullptr)
+	, m_Animator(nullptr)
+	, m_Dead(false)
 {
 }
 
@@ -21,6 +23,8 @@ CObj::~CObj()
 	DEL(m_Collider);
 	DEL(m_Animator);
 }
+
+
 
 void CObj::tick()
 {
@@ -45,6 +49,14 @@ void CObj::render(HDC _dc)
 	{
 		m_Animator->render(_dc);
 	}
+}
+
+void CObj::SetDead()
+{
+	tEvent _evn = {};
+	_evn.eType = EVENT_TYPE::DELETE_OBJECT;
+	_evn.wParam = (DWORD_PTR)this;
+	CEventMge::GetInst()->AddEvent(_evn);
 }
 
 void CObj::CreateCollider()
