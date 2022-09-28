@@ -43,7 +43,7 @@ void CMonster::tick()
 
 void CMonster::render(HDC _dc)
 {
-	Vec2 vPos = GetPos();
+	Vec2 vPos = CCamera::GetInst()->GetRenderPos(GetPos());
 	Vec2 vSize = GetScale();
 
 	HBRUSH hOriginBrush = (HBRUSH)SelectObject(_dc, (HBRUSH)GetStockObject(NULL_BRUSH));

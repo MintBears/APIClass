@@ -15,6 +15,7 @@ private:
 
 public : 
 	HWND GethMainWnd() { return m_hMainWnd; }
+	HDC	GetMainDC() { return m_hDC; }
 	POINT GetResolution() { return m_Resolution; }
 	HPEN GetPen(PEN_TYPE _type) { return m_arrPen[(UINT)_type]; }
 

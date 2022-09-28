@@ -21,10 +21,10 @@ int g_arrVK[(UINT)KEY::END]
 	VK_LBUTTON,
 	VK_RBUTTON,
 
-	'Q',
 	'W',
-	'E',
-	'R',
+	'A',
+	'S',
+	'D',
 };
 
 CKeyMgr::CKeyMgr()

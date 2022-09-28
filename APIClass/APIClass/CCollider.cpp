@@ -25,9 +25,6 @@ void CCollider::tick()
 
 void CCollider::render(HDC _dc)
 {
-	m_FinalPos;
-	m_Scale;
-
 	//펜과 브러쉬를 만든다
 	//HPEN hGreenPen = CreatePen(PS_SOLID, 1, RGB(0, 255, 0));
 	//HBRUSH hNullBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
@@ -48,10 +45,12 @@ void CCollider::render(HDC _dc)
 	HPEN hOriginPen = (HPEN)SelectObject(_dc, hPen);
     HBRUSH hOriginBrush = (HBRUSH)SelectObject(_dc, (HBRUSH)GetStockObject(NULL_BRUSH));
 
-	Rectangle(_dc, (int)(m_FinalPos.x - m_Scale.x / 2.f)
-			   	 , (int)(m_FinalPos.y - m_Scale.y / 2.f)
-				 , (int)(m_FinalPos.x + m_Scale.x / 2.f)
-				 , (int)(m_FinalPos.y + m_Scale.y / 2.f));
+	Vec2 Pos = CCamera::GetInst()->GetRenderPos(m_FinalPos);
+
+	Rectangle(_dc, (int)(Pos.x - m_Scale.x / 2.f)
+			   	 , (int)(Pos.y - m_Scale.y / 2.f)
+				 , (int)(Pos.x + m_Scale.x / 2.f)
+				 , (int)(Pos.y + m_Scale.y / 2.f));
 	//다시 원위치
 	SelectObject(_dc, hOriginPen);
 	SelectObject(_dc, hOriginBrush);

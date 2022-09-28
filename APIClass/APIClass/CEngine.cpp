@@ -1,11 +1,15 @@
 #include "pch.h"
 #include "CEngine.h"
+
 #include "CPathMgr.h"
 #include "CTimeMgr.h"
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
 #include "CCollisionMgr.h"
 #include "CEventMge.h"
+#include "CCamera.h"
+
+#include "CTexture.h"
 
 //½Ì±ÛÅæ ÃÊ±âÈ­
 //CEngine* CEngine::m_pInst = nullptr;
@@ -68,11 +72,6 @@ void CEngine::Inst(HWND _hwnd, UINT _iWidth, UINT _iHeight)
 	CTimeMgr::GetInst()->init();
 	CKeyMgr::GetInst()->init();
 	CLevelMgr::GetInst()->init();
-
-	//Img ·Îµù °æ·Î
-	wstring strFilePath = CPathMgr::GetInst()->GetContentPath();
-	strFilePath += L"texture\\collectibles_001_thesadonion.png";
-
 }
 
 void CEngine::progress()
@@ -90,6 +89,7 @@ void CEngine::tick()
 {
 	CTimeMgr::GetInst()->tick();
 	CKeyMgr::GetInst()->tick();
+	CCamera::GetInst()->tick();
 	CLevelMgr::GetInst()->tick();
 	CCollisionMgr::GetInst()->tick();
 

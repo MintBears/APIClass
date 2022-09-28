@@ -74,6 +74,24 @@
     <Filter Include="Game\02.Manger\PathMgr">
       <UniqueIdentifier>{63899d86-1a39-4231-93e0-c31b75239e79}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\02.Manger\ResMgr\Resource">
+      <UniqueIdentifier>{eaa0e642-a863-4b00-977b-9fa81493d847}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06.Resource">
+      <UniqueIdentifier>{c8e1312f-b2b3-41ae-9d7e-bff9a3dfc02b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06.Resource\Sound">
+      <UniqueIdentifier>{1cd75e4b-8640-4f84-9999-0cedd9e9a7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\06.Resource\Texture">
+      <UniqueIdentifier>{f66b1bbf-0512-4357-a24c-1a03d889a345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\02.Manger\Camera">
+      <UniqueIdentifier>{9c46d337-6156-4454-ab1a-8aea884d5e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\05.Component\Animator\Animation">
+      <UniqueIdentifier>{b9943777-8afc-4ac4-a823-073a10ae0a50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -157,6 +175,21 @@
     <ClInclude Include="CPathMgr.h">
       <Filter>Game\02.Manger\PathMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CRes.h">
+      <Filter>Game\06.Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture.h">
+      <Filter>Game\06.Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CSound.h">
+      <Filter>Game\06.Resource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="CCamera.h">
+      <Filter>Game\02.Manger\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="CAnimation.h">
+      <Filter>Game\05.Component\Animator\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="APIClass.rc">
@@ -235,6 +268,21 @@
     </ClCompile>
     <ClCompile Include="CPathMgr.cpp">
       <Filter>Game\02.Manger\PathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CRes.cpp">
+      <Filter>Game\06.Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="CTexture.cpp">
+      <Filter>Game\06.Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CSound.cpp">
+      <Filter>Game\06.Resource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="CCamera.cpp">
+      <Filter>Game\02.Manger\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="CAnimation.cpp">
+      <Filter>Game\05.Component\Animator\Animation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

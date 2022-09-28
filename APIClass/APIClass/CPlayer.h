@@ -1,5 +1,9 @@
 #pragma once
 #include "CObj.h"
+
+
+class CTexture;
+
 class CPlayer :
     public CObj
 {
@@ -8,7 +12,7 @@ public:
     virtual ~CPlayer();
 
 private:
-    FLOAT   m_fSpeed;
+    FLOAT           m_fSpeed;
 public:
 
     virtual void tick() override;

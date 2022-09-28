@@ -26,6 +26,11 @@ int APIENTRY wWinMain(HINSTANCE hInstance,
                       LPWSTR    lpCmdLine,
                       int       nCmdShow)
 {
+
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //_CrtSetBreakAlloc(숫자입력)
+
+
     //윈도우 설정 세팅 
     MyRegisterClass(hInstance);
 

@@ -28,6 +28,8 @@ public:
 
     Vec2 GetFinalPos() { return m_FinalPos; }
 
+    
+
 public:
     virtual void tick() override;
     virtual void render(HDC _dc) override;

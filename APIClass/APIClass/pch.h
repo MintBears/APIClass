@@ -10,12 +10,15 @@
 #include <memory.h>
 #include <tchar.h>
 
+#include <crtdbg.h>
+
 #include <assert.h>
 
 #include <vector>
 #include <list>
 #include <map>
 #include <string>
+
 
 
 //원래는 std::vector를 풀 네임으로 써야되는데 using를 사용함으로써 std::vector => vector로 사용이 가능하다.
@@ -33,6 +36,9 @@ using std::wstring;
 #include "def.h"
 #include "struct.h"
 #include "Func.h"
+
+
+#pragma comment (lib, "Msimg32.lib")
 
 
 

@@ -5,9 +5,12 @@
 #include "CKeyMgr.h"
 #include "CLevelMgr.h"
 #include "CEventMge.h"
+#include "CPathMgr.h"
+#include "CResMgr.h"
 
 #include "CLevel.h"
 
+#include "CTexture.h"
 #include "CCollider.h"
 #include "CAnimator.h"
 
@@ -15,18 +18,25 @@
 
 
 
-CPlayer::CPlayer():
-	m_fSpeed(200.f)
+CPlayer::CPlayer()
+	: m_fSpeed(200.f)
 
 {
 	CreateCollider();
-
+	
 	GetCollider()->SetOffsetPos(Vec2(0.f, -50.f));
 	GetCollider()->SetScale(Vec2(150.f, 150.f));
+
+	CreateAnimator();
+
+	CTexture* tex = CResMgr::GetInst()->LoadTexture(L"Player", L"texture\\character_001_isaac.bmp");
+	GetCAnimator()->CreateAnimation(L"HeadMove", tex, Vec2(0.f, 0.f), Vec2(32.f, 32.f), 6, 0.5f);
+	GetCAnimator()->Play(L"HeadMove", true);
 }
 
 CPlayer::~CPlayer()
 {
+
 }
 
 void CPlayer::tick()
@@ -87,18 +97,31 @@ void CPlayer::tick()
 
 void CPlayer::render(HDC _dc)
 {
-	Vec2 vPos = GetPos();
-	Vec2 vSize = GetScale();
-
-	HBRUSH hOriginBrush = (HBRUSH)SelectObject(_dc, (HBRUSH)GetStockObject(NULL_BRUSH));
-
-	Rectangle(_dc, (int)(vPos.x - vSize.x / 2.f)
-				 , (int)(vPos.y - vSize.y / 2.f)
-				 , (int)(vPos.x + vSize.x / 2.f)
-				 , (int)(vPos.y + vSize.y / 2.f));
-
-	SelectObject(_dc, hOriginBrush);
-
+	//Vec2 Pos = CCamera::GetInst()->GetRenderPos(GetPos());
+	//Vec2 Size = GetScale();
+	//
+	//Vec2 LeftTop = Vec2(Pos.x - m_Texture->Widht() / 2.0f, Pos.y - m_Texture->Height() / 2.0f);
+	//
+	////HBRUSH hOriginBrush = (HBRUSH)SelectObject(_dc, (HBRUSH)GetStockObject(NULL_BRUSH));
+	////
+	////Rectangle(_dc, (int)(Pos.x - Size.x / 2.f)
+	////			 , (int)(Pos.y - Size.y / 2.f)
+	////			 , (int)(Pos.x + Size.x / 2.f)
+	////			 , (int)(Pos.y + Size.y / 2.f));
+	////
+	////SelectObject(_dc, hOriginBrush);
+	//
+	////BitBlt(_dc, (int)LeftTop.x, (int)LeftTop.y
+	////            , (int)m_Texture->Widht(), (int)m_Texture->Height()
+	////            , m_Texture->GetDC()
+	////            , 0, 0, SRCCOPY);
+	//
+	//TransparentBlt(_dc, (int)LeftTop.x, (int)LeftTop.y
+	//						, (int)m_Texture->Widht(), (int)m_Texture->Height()
+	//						, m_Texture->GetDC()
+	//						, 0, 0
+	//						, (int)m_Texture->Widht(), (int)m_Texture->Height(), RGB(255,0,255));
+	
 	CObj::render(_dc);
 }
 

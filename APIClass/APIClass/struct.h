@@ -27,6 +27,13 @@ public :
 	{
 
 	}
+	Vec2(POINT _point) :
+		x((float)_point.x),
+		y((float)_point.y)
+	{
+
+	}
+
 	~Vec2()
 	{
 
@@ -41,7 +48,7 @@ public:
 		x /= Dist;
 		y /= Dist;
 	}
-
+	//+
 	Vec2 operator + (Vec2 _other)
 	{
 		return Vec2(x + _other.x, y + _other.y);
@@ -51,7 +58,7 @@ public:
 	{
 		return Vec2(x += _other.x, y += _other.y);
 	}
-
+	//-
 	Vec2 operator - (Vec2 _other)
 	{
 		return Vec2(x - _other.x, y - _other.y);
@@ -61,6 +68,35 @@ public:
 	{
 		return Vec2(x -= _other.x, y -= _other.y);
 	}
+	//*
+	Vec2 operator * (Vec2 _other)
+	{
+		return Vec2(x * _other.x, y * _other.y);
+	}
+
+	Vec2 operator *= (Vec2 _other)
+	{
+		return Vec2(x *= _other.x, y *= _other.y);
+	}
+	///
+	Vec2 operator / (Vec2 _other)
+	{
+		return Vec2(x / _other.x, y / _other.y);
+	}
+	Vec2 operator / (float _other)
+	{
+		return Vec2(x / _other, y / _other);
+	}
+
+	Vec2 operator /= (Vec2 _other)
+	{
+		return Vec2(x /= _other.x, y /= _other.y);
+	}
+
+	Vec2 operator /= (float _other)
+	{
+		return Vec2(x /= _other, y /= _other);
+	}
 
 };
 
@@ -69,4 +105,14 @@ struct tEvent
 	EVENT_TYPE	eType;
 	DWORD_PTR	wParam;
 	DWORD_PTR	lParam;
+};
+
+struct tAnimFrm
+{
+	Vec2		LeftTopPos;		//좌상단 좌표
+	Vec2		Size;			//프레임 사이즈
+	Vec2		Offset;			//추가이동
+	float		Duration;		//해당 프레임 노출 시간
+
+
 };

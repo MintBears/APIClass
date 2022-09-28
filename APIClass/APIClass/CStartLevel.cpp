@@ -4,6 +4,7 @@
 #include "CCollisionMgr.h"
 
 #include "CEngine.h"
+#include "CCamera.h"
 #include "CObj.h"
 #include "CPlayer.h"
 #include "CMonster.h"
@@ -36,4 +37,7 @@ void CStartLevel::init()
 	CCollisionMgr::GetInst()->LayerCheck(LAYER::PLAYER, LAYER::MONSTER_PROJECTILE);
 	CCollisionMgr::GetInst()->LayerCheck(LAYER::PLAYER_PROJECTILE, LAYER::MONSTER);
 	CCollisionMgr::GetInst()->LayerCheck(LAYER::MONSTER, LAYER::MONSTER);
+
+	Vec2 Resolution = CEngine::GetInst()->GetResolution();
+	CCamera::GetInst()->SetLook(Resolution/2.f);
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "CEntity.h"
 
+#include "CCamera.h"
+
 class CCollider;
 class CAnimator;
 
@@ -41,7 +43,7 @@ public :
     virtual void render(HDC _dc);
 
     void CreateCollider();
-    void Createanimator();
+    void CreateAnimator();
 
 public:
     virtual void BeginOverlap(CCollider* _Other) {};

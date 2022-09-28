@@ -76,7 +76,7 @@ void CObj::CreateCollider()
 
 }
 
-void CObj::Createanimator()
+void CObj::CreateAnimator()
 {
-	//m_Animator = new CAnimator(this);
+	m_Animator = new CAnimator(this);
 }

@@ -20,10 +20,10 @@ enum class KEY
 	LBTN,
 	RBTN,
 
-	Q,
 	W,
-	E,
-	R,
+	A,
+	S,
+	D,
 
 	END,		//키 종류의 대한 갯수 표현
 };
