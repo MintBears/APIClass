@@ -18,13 +18,7 @@ private:
     int                 m_iCurFrm;
     float               m_fAccTime;
     bool                m_bFinish;
-
-
-private:
-    void init(const wstring& _strName, CTexture* _pAtlas, Vec2 _vLeftTop, Vec2 _vSize, int _iMaxFrmCount, float _fDuration);
 public:
-    void tick();
-    void render(HDC _dc);
 
     bool IsFinish() { return m_bFinish; }
     void Reset()
@@ -34,6 +28,14 @@ public:
         m_fAccTime = 0.f;
     }
 
+private:
+    void init(const wstring& _strName, CTexture* _pAtlas, Vec2 _vLeftTop, Vec2 _vSize, int _iMaxFrmCount, float _fDuration);
+public:
+    void tick();
+    void render(HDC _dc);
+
+    void Save(const wstring& _strRelativePath);
+    void Load(const wstring& _strRelativePath);
 
     friend class CAnimator;
 

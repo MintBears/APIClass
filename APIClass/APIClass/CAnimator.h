@@ -25,6 +25,7 @@ public:
 public:
     void CreateAnimation(const wstring& _strName, CTexture* _pAtlas, Vec2 _vLeftTop, Vec2 _vSize, int _iMaxFrmCount, float _fDuration);
     CAnimation* FindAnimation(const wstring& _strName);
+    CAnimation* LoadAnimation(const wstring& _strRelativePath);
     void Play(const wstring& _strName, bool _bRepeat);
 
 };

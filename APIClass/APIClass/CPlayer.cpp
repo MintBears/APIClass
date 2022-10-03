@@ -13,6 +13,7 @@
 #include "CTexture.h"
 #include "CCollider.h"
 #include "CAnimator.h"
+#include "CAnimation.h"
 
 #include "CMissile.h"
 
@@ -30,8 +31,12 @@ CPlayer::CPlayer()
 	CreateAnimator();
 
 	CTexture* tex = CResMgr::GetInst()->LoadTexture(L"Player", L"texture\\character_001_isaac.bmp");
-	GetCAnimator()->CreateAnimation(L"HeadMove", tex, Vec2(0.f, 0.f), Vec2(32.f, 32.f), 6, 0.5f);
-	GetCAnimator()->Play(L"HeadMove", true);
+
+	//GetCAnimator()->CreateAnimation(L"HeadMove", tex, Vec2(0.f, 0.f), Vec2(32.f, 32.f), 6, 0.5f);
+	//
+	//GetCAnimator()->FindAnimation(L"HeadMove")->Save(L"animation\\HeadMove.anim");
+
+	GetCAnimator()->LoadAnimation(L"animation\\HeadMove.anim");
 }
 
 CPlayer::~CPlayer()
@@ -89,6 +94,9 @@ void CPlayer::tick()
 			Instantiate(Missile, GetPos(), LAYER::PLAYER_PROJECTILE);
 		}
 	}
+
+	if (IsTap(KEY::UP))
+		GetCAnimator()->Play(L"HeadMove", true);
 
 	SetPos(vPos);
 

@@ -112,7 +112,5 @@ struct tAnimFrm
 	Vec2		LeftTopPos;		//좌상단 좌표
 	Vec2		Size;			//프레임 사이즈
 	Vec2		Offset;			//추가이동
-	float		Duration;		//해당 프레임 노출 시간
-
-
+	FLOAT		Duration;		//해당 프레임 노출 시간
 };
