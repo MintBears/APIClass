@@ -8,12 +8,14 @@
 #include "CComponent.h"
 #include "CCollider.h"
 #include "CAnimator.h"
+#include "CRigidbody.h"
 
 CObj::CObj()
 	: m_vPos{}
 	, m_vScale{}
 	, m_Collider(nullptr)
 	, m_Animator(nullptr)
+	, m_Rigidbody(nullptr)
 	, m_Dead(false)
 {
 }
@@ -22,6 +24,7 @@ CObj::~CObj()
 {
 	DEL(m_Collider);
 	DEL(m_Animator);
+	DEL(m_Rigidbody);
 }
 
 
@@ -79,4 +82,9 @@ void CObj::CreateCollider()
 void CObj::CreateAnimator()
 {
 	m_Animator = new CAnimator(this);
+}
+
+void CObj::CreatRigidbody()
+{
+	m_Rigidbody = new CRigidbody(this);
 }

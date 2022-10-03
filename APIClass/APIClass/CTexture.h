@@ -23,5 +23,9 @@ public:
 
 private:
     virtual int Load(const wstring& _strFilePath) override;
+    void Create(UINT _iWidth, UINT _iHeight);
+
+    friend class CResMgr;
+
 };
 

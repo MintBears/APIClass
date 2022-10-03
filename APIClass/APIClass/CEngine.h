@@ -1,5 +1,6 @@
 #pragma once
 
+class CTexture;
 class CEngine
 {
 	SINGLE(CEngine);
@@ -7,8 +8,8 @@ class CEngine
 private:
 	HWND	m_hMainWnd;
 	HDC		m_hDC;
-	HDC		m_hMemDC;
-	HBITMAP m_hMemBit;
+
+	CTexture* m_pMemTex;
 
 	POINT	m_Resolution;
 	HPEN	m_arrPen[(UINT)PEN_TYPE::END];

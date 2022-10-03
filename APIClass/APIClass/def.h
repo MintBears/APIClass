@@ -53,6 +53,12 @@ enum class EVENT_TYPE
 	LEVEL_CHANGE,			//레벨 교환	   //wParam : Level_type(Next Level Type)
 };
 
+enum class CAMERA_EFFECT
+{
+	FADE_IN,
+	FADE_OUT,
+	NONE,
+};
 
 
 

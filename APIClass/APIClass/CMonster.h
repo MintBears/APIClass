@@ -2,6 +2,7 @@
 #include "CObj.h"
 
 class CPlayer;
+class CTexture;
 class CMonster :
     public CObj
 {
@@ -12,8 +13,10 @@ public:
 private:
 
     UINT        m_HP;
+    CObj*       m_Target;
+
     FLOAT       m_Speed;
-    CObj*    m_Target;
+    CTexture*   m_pTex;
 
 public:
 

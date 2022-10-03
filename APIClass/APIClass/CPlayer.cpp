@@ -14,6 +14,7 @@
 #include "CCollider.h"
 #include "CAnimator.h"
 #include "CAnimation.h"
+#include "CRigidbody.h"
 
 #include "CMissile.h"
 
@@ -24,11 +25,12 @@ CPlayer::CPlayer()
 
 {
 	CreateCollider();
+	CreateAnimator();
+	CreatRigidbody();
 	
 	GetCollider()->SetOffsetPos(Vec2(0.f, -50.f));
 	GetCollider()->SetScale(Vec2(150.f, 150.f));
 
-	CreateAnimator();
 
 	CTexture* tex = CResMgr::GetInst()->LoadTexture(L"Player", L"texture\\character_001_isaac.bmp");
 
@@ -52,7 +54,8 @@ void CPlayer::tick()
 	//해결 : 이걸 종합적으로 관리해줄 메니저를 따로 만들어야된다.
 	if (IsPressed(KEY::LEFT))
 	{
-		vPos.x -= m_fSpeed * DT;
+		GetCRigidbody()->AddForce(Vec2(-100.f, 0.f));
+		//vPos.x -= m_fSpeed * DT;
 	}
 
 	if (IsPressed(KEY::RIGHR))
@@ -129,6 +132,8 @@ void CPlayer::render(HDC _dc)
 	//						, m_Texture->GetDC()
 	//						, 0, 0
 	//						, (int)m_Texture->Widht(), (int)m_Texture->Height(), RGB(255,0,255));
+
+	
 	
 	CObj::render(_dc);
 }

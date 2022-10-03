@@ -5,6 +5,7 @@
 
 class CCollider;
 class CAnimator;
+class CRigidbody;
 
 class CObj :
     public CEntity
@@ -17,10 +18,11 @@ private:
     Vec2            m_vPos;
     Vec2            m_vScale;
 
-    CCollider*     m_Collider;
-    CAnimator*     m_Animator;
+    CCollider*      m_Collider;
+    CAnimator*      m_Animator;
+    CRigidbody*     m_Rigidbody;
 
-    bool           m_Dead;
+    bool            m_Dead;
 
 
 public : 
@@ -33,6 +35,7 @@ public :
 
     CCollider* GetCollider() { return m_Collider; }
     CAnimator* GetCAnimator() { return m_Animator; }
+    CRigidbody* GetCRigidbody() { return m_Rigidbody; }
 
     bool IsDead() { return m_Dead; }
     void SetDead();
@@ -44,6 +47,8 @@ public :
 
     void CreateCollider();
     void CreateAnimator();
+    void CreatRigidbody();
+
 
 public:
     virtual void BeginOverlap(CCollider* _Other) {};

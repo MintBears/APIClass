@@ -32,9 +32,9 @@ CTexture* CResMgr::FindTexture(const wstring& _Key)
 	return iter->second;
 }
 
-CTexture* CResMgr::LoadTexture(const wstring& _key, const wstring& _RelativePath)
+CTexture* CResMgr::LoadTexture(const wstring& _Key, const wstring& _RelativePath)
 {
-	CRes* Texture = FindTexture(_key);
+	CRes* Texture = FindTexture(_Key);
 
 	if (nullptr != Texture)
 	{
@@ -46,11 +46,29 @@ CTexture* CResMgr::LoadTexture(const wstring& _key, const wstring& _RelativePath
 
 	Texture = new  CTexture;
 	Texture->Load(FindPath);
-	Texture->SetKey(_key);
+	Texture->SetKey(_Key);
 	Texture->SetRelativePath(_RelativePath);
 
-	m_mapTex.insert(make_pair(_key, (CTexture*)Texture));
+	m_mapTex.insert(make_pair(_Key, (CTexture*)Texture));
 
 
 	return (CTexture*)Texture;
+}
+
+CTexture* CResMgr::CreatTexture(const wstring& _Key, UINT _iWidth, UINT _iHeight)
+{
+	CTexture* Texture = FindTexture(_Key);
+
+	if (nullptr != Texture)
+	{
+		return (CTexture*)Texture;
+	}
+
+	Texture = new  CTexture;
+	Texture->Create(_iWidth, _iHeight);
+	Texture->SetKey(_Key);
+
+	m_mapTex.insert(make_pair(_Key, Texture));
+
+	return Texture;
 }
