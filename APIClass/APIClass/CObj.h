@@ -39,10 +39,11 @@ public :
 
     bool IsDead() { return m_Dead; }
     void SetDead();
-    void Instantiate(CObj* _NewObj, Vec2 _Pos, LAYER _Layer);
+
 
 public : 
     virtual void tick();
+    virtual void final_tick() final;
     virtual void render(HDC _dc);
 
     void CreateCollider();

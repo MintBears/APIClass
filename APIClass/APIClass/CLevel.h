@@ -15,6 +15,7 @@ private:
 public:
     virtual void init() = 0;
     virtual void tick();
+    virtual void final_tick();
     virtual void render(HDC _dc); 
 
 public:

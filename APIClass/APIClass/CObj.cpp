@@ -39,7 +39,27 @@ void CObj::tick()
 	{
 		m_Animator->tick();
 	}
+	if (nullptr != m_Rigidbody)
+	{
+		m_Rigidbody->tick();
+	}
 	
+}
+
+void CObj::final_tick()
+{
+	if (nullptr != m_Collider)
+	{
+		m_Collider->final_tick();
+	}
+	if (nullptr != m_Animator)
+	{
+		m_Animator->final_tick();
+	}
+	if (nullptr != m_Rigidbody)
+	{
+		m_Rigidbody->final_tick();
+	}
 }
 
 void CObj::render(HDC _dc)
@@ -59,17 +79,6 @@ void CObj::SetDead()
 	tEvent _evn = {};
 	_evn.eType = EVENT_TYPE::DELETE_OBJECT;
 	_evn.wParam = (DWORD_PTR)this;
-	CEventMge::GetInst()->AddEvent(_evn);
-}
-
-void CObj::Instantiate(CObj* _NewObj, Vec2 _Pos, LAYER _Layer)
-{
-	_NewObj->SetPos(_Pos);
-
-	tEvent _evn = {};
-	_evn.eType = EVENT_TYPE::CREATE_OBJECT;
-	_evn.wParam = (DWORD_PTR)_NewObj;
-	_evn.lParam = (DWORD_PTR)_Layer;
 	CEventMge::GetInst()->AddEvent(_evn);
 }
 

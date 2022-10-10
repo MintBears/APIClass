@@ -8,6 +8,7 @@
 #define IsTap(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::TAP
 #define IsPressed(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::PRESSED
 #define IsRelease(key) CKeyMgr::GetInst()->GetKeyState(key) == KEY_STATE::RELEASED
+#define MOUSE_POS CKeyMgr::GetInst()->GetMousePos()
 
 #define DEL(p) if (nullptr != p) delete p;
 #define PI	3.1215926535f
@@ -42,6 +43,9 @@ enum class LAYER
 	MONSTER,
 	PLAYER_PROJECTILE,
 	MONSTER_PROJECTILE,
+
+	FORCE,
+
 
 	END = 16
 };

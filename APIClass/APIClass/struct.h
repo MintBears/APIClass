@@ -42,11 +42,21 @@ public :
 
 public:
 
+	bool IsZero()
+	{
+		return x == 0.f && y == 0.f;
+	}
+
 	void Normalize()
 	{
 		float Dist = sqrtf(x * x + y * y);
 		x /= Dist;
 		y /= Dist;
+	}
+
+	float Length()
+	{
+		return sqrtf(x * x + y * y);
 	}
 	//+
 	Vec2 operator + (Vec2 _other)
@@ -73,10 +83,19 @@ public:
 	{
 		return Vec2(x * _other.x, y * _other.y);
 	}
+	Vec2 operator * (float _other)
+	{
+		return Vec2(x * _other, y * _other);
+	}
 
 	Vec2 operator *= (Vec2 _other)
 	{
 		return Vec2(x *= _other.x, y *= _other.y);
+	}
+
+	Vec2 operator *= (float _other)
+	{
+		return Vec2(x *= _other, y *= _other);
 	}
 	///
 	Vec2 operator / (Vec2 _other)
@@ -96,6 +115,11 @@ public:
 	Vec2 operator /= (float _other)
 	{
 		return Vec2(x /= _other, y /= _other);
+	}
+	//
+	Vec2 operator -()
+	{
+		return Vec2(-x, -y);
 	}
 
 };

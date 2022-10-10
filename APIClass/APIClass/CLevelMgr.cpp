@@ -33,6 +33,7 @@ void CLevelMgr::init()
 void CLevelMgr::tick()
 {
 	m_CurLevel->tick();
+	m_CurLevel->final_tick();
 }
 
 void CLevelMgr::render(HDC _dc)

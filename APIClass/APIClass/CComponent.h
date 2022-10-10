@@ -17,6 +17,7 @@ public:
 
 public:
 	virtual void tick() = 0;
+	virtual void final_tick() {};
 	virtual void render(HDC _dc) = 0;
 
 

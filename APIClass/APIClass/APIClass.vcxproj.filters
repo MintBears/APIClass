@@ -92,6 +92,9 @@
     <Filter Include="Game\05.Component\RigidBody">
       <UniqueIdentifier>{2e57262b-eed6-406a-89ce-9e113431b9bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\04.Object\Force">
+      <UniqueIdentifier>{61c04fd4-c942-46e9-9fa7-8962ba097980}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -193,6 +196,9 @@
     <ClInclude Include="CRigidbody.h">
       <Filter>Game\05.Component\RigidBody</Filter>
     </ClInclude>
+    <ClInclude Include="CForce.h">
+      <Filter>Game\04.Object\Force</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="APIClass.rc">
@@ -289,6 +295,9 @@
     </ClCompile>
     <ClCompile Include="CRigidbody.cpp">
       <Filter>Game\05.Component\RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="CForce.cpp">
+      <Filter>Game\04.Object\Force</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

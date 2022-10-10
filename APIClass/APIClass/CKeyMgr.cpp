@@ -1,4 +1,7 @@
 #include "pch.h"
+
+#include "CEngine.h"
+
 #include "CKeyMgr.h"
 
 int g_arrVK[(UINT)KEY::END]
@@ -102,6 +105,16 @@ void CKeyMgr::tick()
 
 		}
 	}
+
+	POINT ptMousePos = {};
+	GetCursorPos(&ptMousePos);
+
+	ScreenToClient(CEngine::GetInst()->GethMainWnd(), &ptMousePos);
+
+	m_vMousePos = ptMousePos;
+
+
+
 
 	
 }

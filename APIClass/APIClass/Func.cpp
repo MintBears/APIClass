@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Func.h"
 
+#include "CEventMge.h"
 #include "CObj.h"
 
 bool IsValid(CObj*& _Target)
@@ -16,6 +17,29 @@ bool IsValid(CObj*& _Target)
 	}
 
     return true;
+}
+
+void Instantiate(CObj* _NewObj, Vec2 _Pos, LAYER _Layer)
+{
+	_NewObj->SetPos(_Pos);
+
+	tEvent _evn = {};
+	_evn.eType = EVENT_TYPE::CREATE_OBJECT;
+	_evn.wParam = (DWORD_PTR)_NewObj;
+	_evn.lParam = (DWORD_PTR)_Layer;
+	CEventMge::GetInst()->AddEvent(_evn);
+}
+
+void Saturate(float& _float)
+{
+	if (1.f < _float)
+	{
+		_float = 1.f;
+	}
+	if (0.f > _float)
+	{
+		_float = 0.f;
+	}
 }
 
 void SaveWString(const wstring& _str, FILE* _pFile)
